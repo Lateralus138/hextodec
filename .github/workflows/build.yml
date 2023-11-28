@@ -29,8 +29,10 @@ jobs:
       run: |
         cd scripts
         .\buildwindows.ps1
-        Get-ChildItem
-        Exit 0
+        Get-ChildItem -Path ..\
+        "================`n================"
+        Get-ChildItem -Path ..\..\
+        Exit 127
         if ($LASTEXITCODE -gt 0)
         {
           Write-Host "[$LASTEXITCODE] - Error in build script."
