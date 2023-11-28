@@ -103,7 +103,7 @@ jobs:
         git config --global user.name 'Lateralus138'
         git config --global user.email 'Lateralus138@users.noreply.github.com'
         git fetch
-        git checkout FETCH_HEAD -- latest_tag_name.txt
+        git checkout FETCH_HEAD -- docs/latest_tag_name.txt
         cat .\docs\latest_tag_name.txt
 # echo -e "================\nTest\n================" >> file.txt
 # echo "Release: ${{ env.VS_FULL }}"
