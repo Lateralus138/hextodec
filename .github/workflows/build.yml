@@ -99,8 +99,9 @@ jobs:
     - name: Build Linux
       id: make_linux_hextodec
       run: |
-        echo -e "================\nTest\n================" >> file.txt
-        echo "Release: ${{ env.VS_FULL }}"
+        ls
+# echo -e "================\nTest\n================" >> file.txt
+# echo "Release: ${{ env.VS_FULL }}"
 # - name: "call action"
 #   id: last_release
 #   uses: InsonusK/get-latest-release@v1.0.1
