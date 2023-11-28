@@ -6,7 +6,7 @@ on:
       - 'src/windows/**.h'
       - 'src/windows/**.o'
       - 'src/windows/**.sln'
-      - '**windows_build.yml'
+      - 'windows_build.yml'
       - '**.ps1'
 env:
   VS_PROGRAM: 1
