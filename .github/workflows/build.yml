@@ -1,15 +1,14 @@
 name: Build Hex To Dec Windows
-workflow_dispatch:
-  on:
-    push:
-      paths:
-        - '**.cpp'
-        - '**.h'
-        - '**.o'
-        - '**.sln'
-        - '**.yml'
-        - '*.yml'
-        - '**.ps1'
+on:
+  push:
+    paths:
+      - '**.cpp'
+      - '**.h'
+      - '**.o'
+      - '**.sln'
+      - '**.yml'
+      - '*.yml'
+      - '**.ps1'
 env:
   VS_PROGRAM: 1
   VS_FILE: 0
