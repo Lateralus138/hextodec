@@ -2,11 +2,12 @@ name: Build Hex To Dec Windows
 on:
   push:
     paths:
-      - 'src/windows/**.cpp'
-      - 'src/windows/**.h'
-      - 'src/windows/**.o'
-      - 'src/windows/**.sln'
+      - '**.cpp'
+      - '**.h'
+      - '**.o'
+      - '**.sln'
       - '*.yml'
+      - '**.yml'
       - '**.ps1'
 env:
   VS_PROGRAM: 1
