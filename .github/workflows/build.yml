@@ -29,7 +29,8 @@ jobs:
       run: |
         cd scripts
         .\buildwindows.ps1
-        & '.\x64\Release\hextodec.exe /h'
+        '================`n================`n================'
+        Get-ChildItem -Path .\
         '================`n================`n================'
         cd ..\..\
         Get-ChildItem -Path .\build -Recurse
