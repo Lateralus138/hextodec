@@ -104,19 +104,11 @@ jobs:
         git config --global user.email 'Lateralus138@users.noreply.github.com'
         git fetch
         git checkout FETCH_HEAD -- docs/latest_tag_name.txt
-        cat docs/latest_tag_name.txt
-# echo -e "================\nTest\n================" >> file.txt
-# echo "Release: ${{ env.VS_FULL }}"
-# - name: "call action"
-#   id: last_release
-#   uses: InsonusK/get-latest-release@v1.0.1
-#   with:
-#     myToken: ${{ github.token }}
-#     exclude_types: "release"
-#     view_top: 1
-# - name: upload binaries to release
-#   uses: softprops/action-gh-release@v1
-#   if: ${{startsWith(github.ref, 'refs/tags/') }}
-#   with:
-#     tag_name: ${{ steps.last_release.outputs.tag_name }}
-#     files: file.txt
+        echo "VS_FULL=$(cat docs/latest_tag_name.txt)" >> $GITHUB_ENV
+        echo -e "================\nTest\n================" >> file.txt
+    - name: upload binaries to release
+      uses: softprops/action-gh-release@v1
+      if: ${{startsWith(github.ref, 'refs/tags/') }}
+      with:
+        tag_name: ${{ env.VS_FULL }}
+        files: file.txt
