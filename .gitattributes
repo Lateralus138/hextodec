@@ -79,6 +79,7 @@
 **.sh binary
 *.ps1 binary
 **.ps1 binary
+**prebuild linguist-detectable=false
 linux/scripts/* linguist-detectable=false
 scripts/* linguist-detectable=false
 scripts/** linguist-detectable=false
