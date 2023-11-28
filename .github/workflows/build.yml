@@ -106,9 +106,14 @@ jobs:
         git checkout FETCH_HEAD -- docs/latest_tag_name.txt
         echo "VS_FULL=$(cat docs/latest_tag_name.txt)" >> $GITHUB_ENV
         echo -e "================\nTest\n================" >> file.txt
-    - name: upload binaries to release
-      uses: softprops/action-gh-release@v1
-      if: ${{startsWith(github.ref, 'refs/tags/') }}
+    - name: Upload
+      uses: djn24/add-asset-to-release@v1
       with:
-        tag_name: ${{ env.VS_FULL }}
-        files: file.txt
+        token: ${{secrets.GITHUB_TOKEN}}
+        path: 'file.txt'
+# - name: upload binaries to release
+#   uses: softprops/action-gh-release@v1
+#   if: ${{startsWith(github.ref, 'refs/tags/') }}
+#   with:
+#     tag_name: ${{ env.VS_FULL }}
+#     files: file.txt
