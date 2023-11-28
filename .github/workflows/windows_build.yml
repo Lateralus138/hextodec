@@ -1,0 +1,89 @@
+name: Build Hex To Dec Windows
+on:
+  push:
+    paths:
+      - 'src/windows/**.cpp'
+      - 'src/windows/**.h'
+      - 'src/windows/**.o'
+      - 'src/windows/**.sln'
+      - '**windows_build.yml'
+      - '**.ps1'
+env:
+  VS_PROGRAM: 1
+  VS_FILE: 0
+  VS_EPOCH:
+  VS_FULL:
+  RELEASE_TITLE: "Hex To Dec"
+  RELEASE_FILE: "./docs/md/release.md"
+  BIN_DEFAULT: "hextodec"
+  PRERELEASE: True
+jobs:
+  build_windows:
+    name: Build Windows Project
+    runs-on: windows-latest
+    steps:
+    - uses: actions/checkout@v3
+    - uses: microsoft/setup-msbuild@v1.3.1
+    - id: make_windows_hextodec
+      run: |
+        cd scripts
+        ./buildwindows.ps1
+        & ..\src\windows\x64\Release\hextodec.exe /h
+        Exit 0
+        if ($LASTEXITCODE -gt 0)
+        {
+          Write-Host "[$LASTEXITCODE] - Error in build script."
+          Exit $LASTEXITCODE
+        }
+        cd ../
+        $epoch = [decimal] [datetimeoffset]::UtcNow.ToUnixTimeMilliseconds()
+        echo "VS_FULL=${{ env.VS_PROGRAM }}.${{ env.VS_FILE }}.$epoch" | Out-File -FilePath $Env:GITHUB_ENV -Encoding utf-8 -Append
+        $hextodec_x86_md5_text = @'
+        {
+          "schemaVersion": 1,
+          "color": "2E9778",
+          "label": "hextodec-x86.exe MD5",
+          "message": "PLACEHOLDER",
+          "labelColor": "1d1d1d",
+          "style": "for-the-badge",
+          "namedLogo": "windows"
+        }
+        '@
+        New-Item -ItemType Directory -Force -Path '.\docs\json'
+        Write-Output "$hextodec_x86_md5_text" > .\docs\json\hextodec_x86_md5.json
+        $file = ".\docs\json\hextodec_x86_md5.json"
+        $md5 = New-Object -TypeName System.Security.Cryptography.MD5CryptoServiceProvider
+        $(Get-FileHash -Path "build\windows\x86\hextodec-x86.exe" -Algorithm MD5).Hash
+        $hash = $(Get-FileHash -Path "build\windows\x86\hextodec-x86.exe" -Algorithm MD5).Hash
+        ((Get-Content -path $file -Raw) -replace 'PLACEHOLDER',$hash) | Set-Content -Path "$file"
+        $hextodec_x64_md5_text = @'
+        {
+          "schemaVersion": 1,
+          "color": "2E9778",
+          "label": "hextodec-x64.exe MD5",
+          "message": "PLACEHOLDER",
+          "labelColor": "1d1d1d",
+          "style": "for-the-badge",
+          "namedLogo": "windows"
+        }
+        '@
+        Write-Output "$hextodec_x64_md5_text" > .\docs\json\hextodec_x64_md5.json
+        $file = ".\docs\json\hextodec_x64_md5.json"
+        $md5 = New-Object -TypeName System.Security.Cryptography.MD5CryptoServiceProvider
+        $hash = $(Get-FileHash -Path "build\windows\x64\hextodec-x64.exe" -Algorithm MD5).Hash
+        ((Get-Content -path $file -Raw) -replace 'PLACEHOLDER',$hash) | Set-Content -Path "$file"
+        git add .\docs\json\*
+        git config --global user.name 'Lateralus138'
+        git config --global user.email 'Lateralus138@users.noreply.github.com'
+        git commit --allow-empty -am "Pushed .\docs\json\* to master. - $(Get-Date ([datetime]::UtcNow)) UTC"
+        git push --force origin master
+    - uses: ncipollo/release-action@v1
+      if: steps.make_windows_hextodec.conclusion == 'success'
+      with:
+        allowUpdates: True
+        tag: ${{ env.VS_FULL }}
+        name: ${{ env.RELEASE_TITLE }} - v${{ env.VS_FULL }}
+        bodyFile: ${{ env.RELEASE_FILE }}
+        prerelease: ${{ env.PRERELEASE }}
+        artifacts: build\windows\x86\${{ env.BIN_DEFAULT }}-x86.exe,build\windows\x64\${{ env.BIN_DEFAULT }}-x64.exe
+        token: ${{ secrets.GITHUB_TOKEN }}
