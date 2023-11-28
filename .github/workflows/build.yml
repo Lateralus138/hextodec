@@ -6,8 +6,8 @@ on:
       - '**.h'
       - '**.o'
       - '**.sln'
-      - '*.yml'
       - '**.yml'
+      - '*.yml'
       - '**.ps1'
 env:
   VS_PROGRAM: 1
