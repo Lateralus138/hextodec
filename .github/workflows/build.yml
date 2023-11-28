@@ -29,9 +29,10 @@ jobs:
       run: |
         cd scripts
         .\buildwindows.ps1
-        Get-ChildItem -Path ..\
-        "================`n================"
-        Get-ChildItem -Path ..\..\
+        & '.\x64\Release\hextodec.exe /h'
+        '================`n================`n================'
+        cd ..\..\
+        Get-ChildItem -Path .\build -Recurse
         Exit 127
         if ($LASTEXITCODE -gt 0)
         {
