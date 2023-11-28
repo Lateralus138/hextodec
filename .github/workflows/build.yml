@@ -30,7 +30,7 @@ jobs:
         cd scripts
         .\buildwindows.ps1
         & ..\src\windows\x64\Release\hextodec.exe /h
-        Exit 0
+        Exit 227
         if ($LASTEXITCODE -gt 0)
         {
           Write-Host "[$LASTEXITCODE] - Error in build script."
