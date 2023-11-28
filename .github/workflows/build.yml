@@ -40,6 +40,7 @@ jobs:
         cd ../../
         $epoch = [decimal] [datetimeoffset]::UtcNow.ToUnixTimeMilliseconds()
         echo "VS_FULL=${{ env.VS_PROGRAM }}.${{ env.VS_FILE }}.$epoch" | Out-File -FilePath $Env:GITHUB_ENV -Encoding utf-8 -Append
+        echo "${{ env.VS_PROGRAM }}.${{ env.VS_FILE }}.$epoch" | Out-File -FilePath .\docs\latest_tag_name.txt -Encoding utf-8
         $hextodec_x86_md5_text = @'
         {
           "schemaVersion": 1,
@@ -74,7 +75,7 @@ jobs:
         $md5 = New-Object -TypeName System.Security.Cryptography.MD5CryptoServiceProvider
         $hash = $(Get-FileHash -Path "build\windows\x64\hextodec-x64.exe" -Algorithm MD5).Hash
         ((Get-Content -path $file -Raw) -replace 'PLACEHOLDER',$hash) | Set-Content -Path "$file"
-        git add .\docs\json\*
+        git add .\docs\json\* .\docs\latest_tag_name.txt
         git config --global user.name 'Lateralus138'
         git config --global user.email 'Lateralus138@users.noreply.github.com'
         git commit --allow-empty -am "Pushed .\docs\json\* to master. - $(Get-Date ([datetime]::UtcNow)) UTC"
@@ -99,7 +100,7 @@ jobs:
     - name: Build Linux
       id: make_linux_hextodec
       run: |
-        ls
+        cat .\docs\latest_tag_name.txt
 # echo -e "================\nTest\n================" >> file.txt
 # echo "Release: ${{ env.VS_FULL }}"
 # - name: "call action"
