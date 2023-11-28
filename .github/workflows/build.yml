@@ -29,7 +29,7 @@ jobs:
       run: |
         cd scripts
         .\buildwindows.ps1
-        Get-ChildItem -Path
+        Get-ChildItem
         Exit 0
         if ($LASTEXITCODE -gt 0)
         {
