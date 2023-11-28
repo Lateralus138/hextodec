@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+if [[ ! -e "src/include/pch.h.gch" ]]; then
+  make pch
+fi
+if ! ls src/lib/*.o 1> /dev/null 2>&1; then
+  make buildlibslinux
+fi
+if ! ls src/lib/*.a 1> /dev/null 2>&1; then
+  make buildlibslinux
+fi
