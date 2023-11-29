@@ -91,9 +91,8 @@ jobs:
         token: ${{ secrets.GITHUB_TOKEN }}
   build_linux:
     name: Build Linux Project
-    if: ${{ jobs.build_windows.if == 'success' }}
     runs-on: ubuntu-latest
-# needs: [build_windows]
+    needs: [build_windows]
     steps:
     - name: Checkout Linux
       uses: actions/checkout@v3
