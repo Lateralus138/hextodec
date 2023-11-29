@@ -111,5 +111,8 @@ jobs:
         cd src/linux || exit 251
         chmod u+x prebuild || exit 250
         make || exit 249
-        tree
-# gh release upload "$version"
+        if [[ -f "release/dynamic/hextodec" ]]; then
+          gh release upload "$version" release/dynamic/hextodec
+        else
+          exit 248
+        fi
