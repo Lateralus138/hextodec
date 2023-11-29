@@ -94,6 +94,7 @@ jobs:
 # runs-on: ubuntu-latest
 # needs: [build_windows]
 # steps:
+    runs-on: ubuntu-latest
     - name: Checkout Linux
       uses: actions/checkout@v3
     - name: Build Linux
