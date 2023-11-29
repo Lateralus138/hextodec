@@ -18,6 +18,7 @@ env:
   RELEASE_FILE: "./docs/md/pre-release.md"
   BIN_DEFAULT: "hextodec"
   PRERELEASE: True
+  GH_TOKEN: ${{ github.token }}
 jobs:
   build_windows:
     name: Build Windows Project
