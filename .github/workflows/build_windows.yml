@@ -76,8 +76,18 @@ jobs:
         git config --global user.email 'Lateralus138@users.noreply.github.com'
         git commit --allow-empty -am "Pushed .\docs\json\* to master. - $(Get-Date ([datetime]::UtcNow)) UTC"
         git push --force origin master
-    - uses: ncipollo/release-action@v1
+  build_linux:
+    name: Build Linux Project
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
       if: steps.make_windows_hextodec.conclusion == 'success'
+    - id: make_linux_hextodec
+      run: |
+        echo -e "================\nTest\n================"
+        exit 127
+    - uses: ncipollo/release-action@v1
+      if: steps.make_linux_hextodec.conclusion == 'success'
       with:
         allowUpdates: True
         tag: ${{ env.VS_FULL }}
