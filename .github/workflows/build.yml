@@ -41,7 +41,7 @@ jobs:
         cd ../../
         $epoch = [decimal] [datetimeoffset]::UtcNow.ToUnixTimeMilliseconds()
         echo "VS_FULL=${{ env.VS_PROGRAM }}.${{ env.VS_FILE }}.$epoch" | Out-File -FilePath $Env:GITHUB_ENV -Encoding utf-8 -Append
-        echo "${{ env.VS_PROGRAM }}.${{ env.VS_FILE }}.$epoch" | Out-File -FilePath .\docs\latest_tag_name.txt -Encoding utf-8
+        echo "${{ env.VS_PROGRAM }}.${{ env.VS_FILE }}.$epoch" | Out-File -FilePath .\docs\latest_tag_name.txt
         $hextodec_x86_md5_text = @'
         {
           "schemaVersion": 1,
@@ -107,8 +107,9 @@ jobs:
         git checkout FETCH_HEAD -- docs/latest_tag_name.txt
         echo "VS_FULL=$(cat docs/latest_tag_name.txt)" >> $GITHUB_ENV
         version="$(cat docs/latest_tag_name.txt)"
+        version="$(echo $version | tr -d '\r')"
         echo -e "================\nTest\n================" >> file.txt
-        gh release upload $version file.txt
+        gh release upload "$version" file.txt
 # - uses: actions/checkout@v2
 # - uses: meeDamian/github-release@2.0
 #   with:
