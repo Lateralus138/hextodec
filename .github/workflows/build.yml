@@ -100,7 +100,24 @@ jobs:
       id: make_linux_hextodec
       run: |
         echo -e "================\nTest\n================" >> file.txt
-        echo "Release: ${{ steps.release_windows.outputs.release }}"
+        echo "Release: ${{ steps.make_windows_hextodec.outputs.release }}"
+    - name: "call action"
+      id: last_release
+      uses: InsonusK/get-latest-release@v1.0.1
+      with:
+        myToken: ${{ github.token }}
+        exclude_types: "release"
+        view_top: 1
+    - name: "Print result"
+      run: |
+        echo "id: ${{ steps.last_release.outputs.id }}"
+        echo "name: ${{ steps.last_release.outputs.name }}"
+        echo "tag_name: ${{ steps.last_release.outputs.tag_name }}"
+        echo "created_at: ${{ steps.last_release.outputs.created_at }}"
+        echo "draft: ${{ steps.last_release.outputs.draft }}"
+        echo "prerelease: ${{ steps.last_release.outputs.prerelease }}"
+        echo "url: ${{ steps.last_release.outputs.url }}"
+        echo "html_url: ${{ steps.last_release.outputs.html_url }}"
 # - name: upload binaries to release
 #   uses: softprops/action-gh-release@v1
 #   if: ${{startsWith(github.ref, 'refs/tags/') }}
