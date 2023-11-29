@@ -89,11 +89,11 @@ jobs:
         prerelease: ${{ env.PRERELEASE }}
         artifacts: build\windows\x86\${{ env.BIN_DEFAULT }}-x86.exe,build\windows\x64\${{ env.BIN_DEFAULT }}-x64.exe
         token: ${{ secrets.GITHUB_TOKEN }}
-  build_linux:
-    name: Build Linux Project
-    runs-on: ubuntu-latest
-    needs: [build_windows]
-    steps:
+# build_linux:
+# name: Build Linux Project
+# runs-on: ubuntu-latest
+# needs: [build_windows]
+# steps:
     - name: Checkout Linux
       uses: actions/checkout@v3
     - name: Build Linux
