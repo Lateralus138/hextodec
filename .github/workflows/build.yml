@@ -85,9 +85,12 @@ jobs:
     - id: make_linux_hextodec
       run: |
         echo -e "================\nTest\n================"
-        exit 127
+  release:
+    name: Release Project
+    needs: [build_windows, build_linux]
+    steps:
     - uses: ncipollo/release-action@v1
-      if: steps.make_linux_hextodec.conclusion == 'success'
+# if: steps.make_linux_hextodec.conclusion == 'success'
       with:
         allowUpdates: True
         tag: ${{ env.VS_FULL }}
