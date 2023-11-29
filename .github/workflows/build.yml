@@ -106,9 +106,10 @@ jobs:
         git checkout FETCH_HEAD -- docs/latest_tag_name.txt
         echo "VS_FULL=$(cat docs/latest_tag_name.txt)" >> $GITHUB_ENV
         echo -e "================\nTest\n================" >> file.txt
-    - uses: actions/checkout@v2
-    - uses: meeDamian/github-release@2.0
-      with:
-        token: ${{ secrets.GITHUB_TOKEN }}
-        tag: ${{ env.VS_FULL }}
-        files: file.txt
+        gh release upload ${{ env.VS_FULL }} file.txt
+# - uses: actions/checkout@v2
+# - uses: meeDamian/github-release@2.0
+#   with:
+#     token: ${{ secrets.GITHUB_TOKEN }}
+#     tag: ${{ env.VS_FULL }}
+#     files: file.txt
