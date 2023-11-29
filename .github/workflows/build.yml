@@ -23,9 +23,12 @@ jobs:
     name: Build Windows Project
     runs-on: windows-latest
     steps:
-    - uses: actions/checkout@v3
-    - uses: microsoft/setup-msbuild@v1.3.1
-    - id: make_windows_hextodec
+    - name: Checkout Windows
+      uses: actions/checkout@v3
+    - name: MSBuild Setup
+      uses: microsoft/setup-msbuild@v1.3.1
+    - name: Build Windows
+      id: make_windows_hextodec
       run: |
         cd scripts
         .\buildwindows.ps1
@@ -76,8 +79,8 @@ jobs:
         git config --global user.email 'Lateralus138@users.noreply.github.com'
         git commit --allow-empty -am "Pushed .\docs\json\* to master. - $(Get-Date ([datetime]::UtcNow)) UTC"
         git push --force origin master
-    - uses: ncipollo/release-action@v1
-      if: steps.make_linux_hextodec.conclusion == 'success'
+    - name: Release Windows
+      uses: ncipollo/release-action@v1
       with:
         allowUpdates: True
         tag: ${{ env.VS_FULL }}
