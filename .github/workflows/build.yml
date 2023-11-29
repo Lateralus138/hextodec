@@ -19,7 +19,7 @@ env:
   BIN_DEFAULT: "hextodec"
   PRERELEASE: True
 jobs:
-  build:
+  build_windows:
     name: Build Windows Project
     runs-on: windows-latest
     steps:
@@ -76,6 +76,7 @@ jobs:
         git config --global user.email 'Lateralus138@users.noreply.github.com'
         git commit --allow-empty -am "Pushed .\docs\json\* to master. - $(Get-Date ([datetime]::UtcNow)) UTC"
         git push --force origin master
+  build_linux:
     name: Build Linux Project
     runs-on: ubuntu-latest
     if: steps.make_windows_hextodec.conclusion == 'success'
