@@ -1,4 +1,4 @@
-# Hex To Dec
+# Hex To Dec <img src="./docs/media/logo/hextodec.png" width="28" alt="Hex To Dec Logo" style="vertical-align: middle;">
 
 ![Readme Card](https://github-readme-stats.vercel.app/api/pin/?username=Lateralus138&repo=hextodec)
 
@@ -75,6 +75,10 @@
 ---
 
 ## Media
+
+Logo
+
+![LOGO](docs/media/logo/hextodec.png)
 
 ---
 
