@@ -103,6 +103,6 @@ jobs:
     - name: upload binaries to release
       uses: softprops/action-gh-release@v1
 #if: ${{startsWith( ${{ env.VS_FULL }}, 'refs/tags/') }}
-      tag_name: ${{ env.VS_FULL }}
       with:
-          files: file.txt
+        tag_name: ${{ env.VS_FULL }}
+        files: file.txt
