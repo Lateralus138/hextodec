@@ -108,11 +108,7 @@ jobs:
         echo "VS_FULL=$(cat docs/latest_tag_name.txt)" >> $GITHUB_ENV
         version="$(cat docs/latest_tag_name.txt)"
         version="$(echo $version | tr -d '\r')"
-        echo -e "================\nTest\n================" >> file.txt
-        gh release upload "$version" file.txt
-# - uses: actions/checkout@v2
-# - uses: meeDamian/github-release@2.0
-#   with:
-#     token: ${{ secrets.GITHUB_TOKEN }}
-#     tag: ${{ env.VS_FULL }}
-#     files: file.txt
+        cd src/linux
+        ./prebuild && make
+        tree
+# gh release upload "$version"
