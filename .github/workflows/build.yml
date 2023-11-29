@@ -1,4 +1,4 @@
-name: Build Hex To Dec Windows
+name: Build Hex To Dec
 on:
   push:
     paths:
@@ -6,8 +6,8 @@ on:
       - '**.h'
       - '**.o'
       - '**.sln'
-      - '**build_windows.yml'
-      - '*build_windows.yml'
+      - '**.yml'
+      - '*.yml'
       - '**.ps1'
 env:
   VS_PROGRAM: 1
