@@ -79,7 +79,7 @@ jobs:
   build_linux:
     name: Build Linux Project
     runs-on: ubuntu-latest
-    if: steps.make_windows_hextodec.conclusion == 'success'
+    if: ${{ steps.make_windows_hextodec.conclusion == 'success' }}
     steps:
     - uses: actions/checkout@v3
     - id: make_linux_hextodec
