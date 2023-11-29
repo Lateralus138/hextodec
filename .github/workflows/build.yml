@@ -102,7 +102,7 @@ jobs:
         echo -e "================\nTest\n================" >> file.txt
     - name: upload binaries to release
       uses: softprops/action-gh-release@v1
-#if: ${{startsWith( ${{ env.VS_FULL }}, 'refs/tags/') }}
+      if: ${{startsWith( ${{ env.VS_FULL }}, 'refs/tags/') }}
       with:
         tag_name: ${{ env.VS_FULL }}
         files: file.txt
