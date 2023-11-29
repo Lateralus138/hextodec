@@ -6,8 +6,8 @@ on:
       - '**.h'
       - '**.o'
       - '**.sln'
-      - '**.yml'
-      - '*.yml'
+      - '**build_windows.yml'
+      - '*build_windows.yml'
       - '**.ps1'
 env:
   VS_PROGRAM: 1
@@ -29,10 +29,6 @@ jobs:
       run: |
         cd scripts
         .\buildwindows.ps1
-        "================`n================"
-        & '..\..\build\windows\x64\hextodec-x64.exe' /h
-        "================`n================"
-        Exit 127
         if ($LASTEXITCODE -gt 0)
         {
           Write-Host "[$LASTEXITCODE] - Error in build script."
