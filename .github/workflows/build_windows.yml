@@ -34,7 +34,7 @@ jobs:
           Write-Host "[$LASTEXITCODE] - Error in build script."
           Exit $LASTEXITCODE
         }
-        cd ../
+        cd ../../
         $epoch = [decimal] [datetimeoffset]::UtcNow.ToUnixTimeMilliseconds()
         echo "VS_FULL=${{ env.VS_PROGRAM }}.${{ env.VS_FILE }}.$epoch" | Out-File -FilePath $Env:GITHUB_ENV -Encoding utf-8 -Append
         $hextodec_x86_md5_text = @'
