@@ -101,14 +101,15 @@ jobs:
     - name: Build Linux
       id: make_linux_hextodec
       run: |
-        git config --global user.name 'Lateralus138'
-        git config --global user.email 'Lateralus138@users.noreply.github.com'
-        git fetch
-        git checkout FETCH_HEAD -- docs/latest_tag_name.txt
+        git config --global user.name 'Lateralus138' || exit 255
+        git config --global user.email 'Lateralus138@users.noreply.github.com' || exit 254
+        git fetch || exit 253
+        git checkout FETCH_HEAD -- docs/latest_tag_name.txt || exit 252
         echo "VS_FULL=$(cat docs/latest_tag_name.txt)" >> $GITHUB_ENV
         version="$(cat docs/latest_tag_name.txt)"
         version="$(echo $version | tr -d '\r')"
-        cd src/linux
-        ./prebuild && make
+        cd src/linux || exit 251
+        chmod u+x prebuild || exit 250
+        make || exit 249
         tree
 # gh release upload "$version"
