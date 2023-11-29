@@ -100,11 +100,10 @@ jobs:
       id: make_linux_hextodec
       run: |
         echo -e "================\nTest\n================" >> file.txt
-        echo "env.VS_FULL: ${{ env.VS_FULL }}"
-        echo "github.ref: ${{ github.ref }}"
-    - name: upload binaries to release
-      uses: softprops/action-gh-release@v1
-      if: ${{startsWith(github.ref, 'refs/tags/') }}
-      with:
-        tag_name: ${{ env.VS_FULL }}
-        files: file.txt
+        echo "Release: ${{ steps.release_windows.outputs.release }}"
+# - name: upload binaries to release
+#   uses: softprops/action-gh-release@v1
+#   if: ${{startsWith(github.ref, 'refs/tags/') }}
+#   with:
+#     tag_name: ${{ env.VS_FULL }}
+#     files: file.txt
