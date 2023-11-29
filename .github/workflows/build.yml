@@ -87,6 +87,7 @@ jobs:
         echo -e "================\nTest\n================"
   release:
     name: Release Project
+    runs-on: ubuntu-latest
     needs: [build_windows, build_linux]
     steps:
     - uses: ncipollo/release-action@v1
