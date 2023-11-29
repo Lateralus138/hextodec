@@ -95,8 +95,8 @@ jobs:
     - id: make_linux_hextodec
       run: |
         echo -e "================\nTest\n================" >> file.txt
-    - name: upload binaries to release
-        uses: softprops/action-gh-release@v1
-        if: ${{startsWith(github.ref, 'refs/tags/') }}
-        with:
-            files: file.txt
+    name: upload binaries to release
+      uses: softprops/action-gh-release@v1
+      if: ${{startsWith(github.ref, 'refs/tags/') }}
+      with:
+          files: file.txt
