@@ -112,7 +112,15 @@ jobs:
         chmod u+x prebuild || exit 250
         make || exit 249
         if [[ -f "release/dynamic/hextodec" ]]; then
-          gh release upload "$version" release/dynamic/hextodec
+          MESSAGE="{\n\t\"schemaVersion\": 1,\n\t\"color\": \"2E9778\",\n\t\"label\": \"hextodec MD5\",\n\t\"message\": \"PLACEHOLDER\",\n\t\"labelColor\": \"1d1d1d\",\n\t\"style\": \"for-the-badge\",\n\t\"namedLogo\": \"linux\"\n}"
+          MD5=($(md5sum release/dynamic/hextodec))
+          MESSAGE="${MESSAGE//PLACEHOLDER/${MD5}}"
+          cd ../../ || exit 247
+          echo -e "$MESSAGE" > ./docs/json/hextodec_linux_md5.json || exit 246
+          git add ./docs/json/hextodec_linux_md5.json || exit 245
+          git commit --allow-empty -am "Pushed ./docs/json/hextodec_linux_md5.json to master. - $(date -u)" || exit 244
+          git push --force origin master || exit 243
+          gh release upload "$version" src/linux/release/dynamic/hextodec || exit 242
         else
           exit 248
         fi
