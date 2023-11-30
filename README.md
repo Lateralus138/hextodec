@@ -70,6 +70,10 @@ This is a command line tool for both *Windows* and *Linux*.
 
 ![LINUX MD5](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/Lateralus138/hextodec/master/docs/json/hextodec_linux_md5.json)
 
+### Current Debian Installer MD5
+
+![DEBIAN MD5](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/Lateralus138/hextodec/master/docs/json/hextodec_debian_md5.json)
+
 ### Other Miscellaneous File Information
 
 |Description|Status|

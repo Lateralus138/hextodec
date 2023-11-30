@@ -112,11 +112,11 @@ jobs:
         chmod u+x prebuild || exit 250
         make || exit 249
         if [[ -f "release/dynamic/hextodec" ]]; then
-          MESSAGE="{\n\t\"schemaVersion\": 1,\n\t\"color\": \"2E9778\",\n\t\"label\": \"hextodec MD5\",\n\t\"message\": \"PLACEHOLDER\",\n\t\"labelColor\": \"1d1d1d\",\n\t\"style\": \"for-the-badge\",\n\t\"namedLogo\": \"linux\"\n}"
-          MD5=($(md5sum release/dynamic/hextodec))
-          MESSAGE="${MESSAGE//PLACEHOLDER/${MD5}}"
+          MESSAGEL="{\n\t\"schemaVersion\": 1,\n\t\"color\": \"2E9778\",\n\t\"label\": \"hextodec MD5\",\n\t\"message\": \"PLACEHOLDER\",\n\t\"labelColor\": \"1d1d1d\",\n\t\"style\": \"for-the-badge\",\n\t\"namedLogo\": \"linux\"\n}"
+          MD5L=($(md5sum release/dynamic/hextodec))
+          MESSAGEL="${MESSAGEL//PLACEHOLDER/${MD5L}}"
           cd ../../ || exit 247
-          echo -e "$MESSAGE" > ./docs/json/hextodec_linux_md5.json || exit 246
+          echo -e "$MESSAGEL" > ./docs/json/hextodec_linux_md5.json || exit 246
           git add ./docs/json/hextodec_linux_md5.json || exit 245
           git commit --allow-empty -am "Pushed ./docs/json/hextodec_linux_md5.json to master. - $(date -u)" || exit 244
           git push --force origin master || exit 243
@@ -124,3 +124,16 @@ jobs:
         else
           exit 248
         fi
+        cd src/linux || exit 241
+        chmod 0755 release/dynamic/hextodec || exit 240
+        cp release/dynamic/hextodec debian/usr/bin || exit 239
+        dpkg-deb --root-owner-group --build debian hextodec-1.0.0.deb || exit 238
+        MESSAGED="{\n\t\"schemaVersion\": 1,\n\t\"color\": \"2E9778\",\n\t\"label\": \"hextodec-1.0.0.deb MD5\",\n\t\"message\": \"PLACEHOLDER\",\n\t\"labelColor\": \"1d1d1d\",\n\t\"style\": \"for-the-badge\",\n\t\"namedLogo\": \"linux\"\n}"
+        MD5D=($(md5sum hextodec-1.0.0.deb))
+        MESSAGED="${MESSAGED//PLACEHOLDER/${MD5D}}"
+        cd ../../ || exit 237
+        echo -e "$MESSAGED" > ./docs/json/hextodec_debian_md5.json || exit 236
+        git add ./docs/json/hextodec_debian_md5.json || exit 235
+        git commit --allow-empty -am "Pushed ./docs/json/hextodec_debian_md5.json to master. - $(date -u)" || exit 234
+        git push --force origin master || exit 233
+        gh release upload "$version" src/linux/hextodec-1.0.0.deb || exit 232
