@@ -1,0 +1,7 @@
+hextodec_list=(
+  -h --help
+  -x --hexadecimal
+  -p --padding
+)
+complete -W "$(printf '%s\n' "${hextodec_list[@]}")" hextodec
+

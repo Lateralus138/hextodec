@@ -1,0 +1,12 @@
+Source: hextodec
+Package: hextodec
+Section: utils
+Priority: optional
+Maintainer: Ian Pride <faithnomoread@yahoo.com>
+Homepage: https://github.com/Lateralus138/hextodec
+Version: 1.0.0
+Installed-Size: 260
+Architecture: amd64
+Depends: libc6
+Description: Convert hexadecimal values to decimal format from the command line.
+ Command line utility to convert hexadecimal values to decimal format.
