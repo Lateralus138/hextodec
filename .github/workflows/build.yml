@@ -126,20 +126,15 @@ jobs:
         fi
         cd src/linux || exit 241
         chmod 0755 release/dynamic/hextodec || exit 240
-        cp release/dynamic/hextodec debian/usr/bin || exit 239
-        echo -e "=====\n====="
-        ls -l release/dynamic
-        echo -e "=====\n====="
-        tree debian
-        echo -e "=====\n====="
-        exit 0
-        dpkg-deb --root-owner-group --build debian hextodec-1.0.0.deb || exit 238
+        mkdir debian/usr/bin || exit 239
+        cp release/dynamic/hextodec debian/usr/bin || exit 238
+        dpkg-deb --root-owner-group --build debian hextodec-1.0.0.deb || exit 237
         MESSAGED="{\n\t\"schemaVersion\": 1,\n\t\"color\": \"2E9778\",\n\t\"label\": \"hextodec-1.0.0.deb MD5\",\n\t\"message\": \"PLACEHOLDER\",\n\t\"labelColor\": \"1d1d1d\",\n\t\"style\": \"for-the-badge\",\n\t\"namedLogo\": \"debian\"\n}"
         MD5D=($(md5sum hextodec-1.0.0.deb))
         MESSAGED="${MESSAGED//PLACEHOLDER/${MD5D}}"
-        cd ../../ || exit 237
-        echo -e "$MESSAGED" > ./docs/json/hextodec_debian_md5.json || exit 236
-        git add ./docs/json/hextodec_debian_md5.json || exit 235
-        git commit --allow-empty -am "Pushed ./docs/json/hextodec_debian_md5.json to master. - $(date -u)" || exit 234
-        git push --force origin master || exit 233
-        gh release upload "$version" src/linux/hextodec-1.0.0.deb || exit 232
+        cd ../../ || exit 236
+        echo -e "$MESSAGED" > ./docs/json/hextodec_debian_md5.json || exit 235
+        git add ./docs/json/hextodec_debian_md5.json || exit 234
+        git commit --allow-empty -am "Pushed ./docs/json/hextodec_debian_md5.json to master. - $(date -u)" || exit 233
+        git push --force origin master || exit 232
+        gh release upload "$version" src/linux/hextodec-1.0.0.deb || exit 231
