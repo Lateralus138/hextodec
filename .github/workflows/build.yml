@@ -15,9 +15,9 @@ env:
   VS_EPOCH:
   VS_FULL:
   RELEASE_TITLE: "Hex To Dec"
-  RELEASE_FILE: "./docs/md/pre-release.md"
+  RELEASE_FILE: "./docs/md/release.md"
   BIN_DEFAULT: "hextodec"
-  PRERELEASE: True
+  PRERELEASE: False
   GH_TOKEN: ${{ github.token }}
 jobs:
   build_windows:
