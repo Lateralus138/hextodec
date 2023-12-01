@@ -4,17 +4,44 @@
 
 ---
 
-***This project is*** ![Under Construction](https://img.shields.io/static/v1?logo=data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAOCAYAAAAfSC3RAAACmElEQVQokUWSa0iTcRTGn//26u4b6ZQ0U8lKMqykwPpgZVBEHyLp8jEoIZJADCQ0iCiStIwuZmHRioIuroQss2VkrkIrdeFckiZqdhctTXPOve8Tr7M6X8/zO+fwPEfIwy7IwQA0GgExGYQwyhCmMLRX1z2hJCJSN+xZgqAZnPgCaAUQ0EHICjSYLlKBCDdNQb7HLmeRoy3zQFnzYk/1WTckGUIXCVD+Kw+BpAxtuBXCpkN7bdXt/JL3W3J3xuHg3iTsL/NkNFWVPoWkQOj/wxooCrRhFgiTjI4n9ZVHHQObjxVEY8UGIi1zEhVFCahwdq5qvn+hHkKC0EcBigxwvAnkW3ge7L6TMi+VztOLOOKOY8ulKL68GM2emnjeLF3AZSlz2FCZ6yaHwLGv6pkv8MyxsUoHLcsLwBuHwE0rtdy2UuLWNTpmpkkszQEfnAPDAd47tbaB7NaJR+eXujfmtGTUXgFWp5uwPd8Oi1GBJEmwWYlP34L4PSFw7chPeD+MYnkWUVmy0CeNfe5N8ANIjNWpNmHzqklYrDIGRwRm2gXsM/xofRMOf1AgcbYOAfgxMvgxCmS9+dbh5A6VarxuIMdBDoJ0g+vSreytNpAEux7qqWrK82I+kC2xYOAzyFbz5QNJPrXhdRo4XK/n3WILkxPsbKqwsr8xBB3PjukhGyJJv+qqB+QvkN0mR2Fim5pU1hobzxTYOPbcyJoTNpoAlu6wdZKvIslR0O9VXe0Clc5p2Ge4WDh36ux3ThM/1RqnNhXvilU32cjvINtAf4cKdkzlSHpBTqgNY11JfLtFA+o14NU8Wx/piggNfg2yGVR8EF9/dP37PyCIoDQLs8z9hmv71nsC4wFz9klX2tD4/AEG+gBoQ7KghD8MZ2xdnt7s7wAAAABJRU5ErkJggg==&label=Under&message=Construction&style=for-the-badge&labelColor=1D1D1D&color=ffff99)
+<!-- ***This project is*** ![Under Construction](https://img.shields.io/static/v1?logo=data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAOCAYAAAAfSC3RAAACmElEQVQokUWSa0iTcRTGn//26u4b6ZQ0U8lKMqykwPpgZVBEHyLp8jEoIZJADCQ0iCiStIwuZmHRioIuroQss2VkrkIrdeFckiZqdhctTXPOve8Tr7M6X8/zO+fwPEfIwy7IwQA0GgExGYQwyhCmMLRX1z2hJCJSN+xZgqAZnPgCaAUQ0EHICjSYLlKBCDdNQb7HLmeRoy3zQFnzYk/1WTckGUIXCVD+Kw+BpAxtuBXCpkN7bdXt/JL3W3J3xuHg3iTsL/NkNFWVPoWkQOj/wxooCrRhFgiTjI4n9ZVHHQObjxVEY8UGIi1zEhVFCahwdq5qvn+hHkKC0EcBigxwvAnkW3ge7L6TMi+VztOLOOKOY8ulKL68GM2emnjeLF3AZSlz2FCZ6yaHwLGv6pkv8MyxsUoHLcsLwBuHwE0rtdy2UuLWNTpmpkkszQEfnAPDAd47tbaB7NaJR+eXujfmtGTUXgFWp5uwPd8Oi1GBJEmwWYlP34L4PSFw7chPeD+MYnkWUVmy0CeNfe5N8ANIjNWpNmHzqklYrDIGRwRm2gXsM/xofRMOf1AgcbYOAfgxMvgxCmS9+dbh5A6VarxuIMdBDoJ0g+vSreytNpAEux7qqWrK82I+kC2xYOAzyFbz5QNJPrXhdRo4XK/n3WILkxPsbKqwsr8xBB3PjukhGyJJv+qqB+QvkN0mR2Fim5pU1hobzxTYOPbcyJoTNpoAlu6wdZKvIslR0O9VXe0Clc5p2Ge4WDh36ux3ThM/1RqnNhXvilU32cjvINtAf4cKdkzlSHpBTqgNY11JfLtFA+o14NU8Wx/piggNfg2yGVR8EF9/dP37PyCIoDQLs8z9hmv71nsC4wFz9klX2tD4/AEG+gBoQ7KghD8MZ2xdnt7s7wAAAABJRU5ErkJggg==&label=Under&message=Construction&style=for-the-badge&labelColor=1D1D1D&color=ffff99) -->
+
+- [Hex To Dec ](#hex-to-dec-)
+  - [About](#about)
+    - [Description](#description)
+    - [Motivation](#motivation)
+  - [Usage](#usage)
+    - [Environment](#environment)
+    - [How To Use](#how-to-use)
+      - [Windows Use](#windows-use)
+        - [Windows Portable](#windows-portable)
+        - [Windows Installation](#windows-installation)
+      - [Linux Use](#linux-use)
+        - [Linux Portable](#linux-portable)
+        - [Debian Installation](#debian-installation)
+    - [Examples](#examples)
+  - [Project Information](#project-information)
+    - [Source File Quality](#source-file-quality)
+    - [File MD5 Hashes](#file-md5-hashes)
+    - [Current Windows X86 MD5](#current-windows-x86-md5)
+    - [Current Windows X64 MD5](#current-windows-x64-md5)
+    - [Current Linux MD5](#current-linux-md5)
+    - [Current Debian Installer MD5](#current-debian-installer-md5)
+    - [Other Miscellaneous File Information](#other-miscellaneous-file-information)
+  - [Media](#media)
+  - [Support Me If You Like](#support-me-if-you-like)
+  - [LICENSE](#license)
+
 
 ---
 
 ## About
 
-&#x41;&#x6c;&#x6c;&#x20;&#x66;&#x69;&#x6c;&#x65;&#x73;&#x20;&#x63;&#x61;&#x6e;&#x20;&#x62;&#x65;&#x20;&#x66;&#x6f;&#x75;&#x6e;&#x64;&#x20;&#x6f;&#x6e;&#x20;&#x74;&#x68;&#x65;&#x20;[Releases](https://github.com/Lateralus138/hextodec/releases)&#x20;&#x70;&#x61;&#x67;&#x65;&#x2e;
+All files can be found at the [Releases](https://github.com/Lateralus138/hextodec/releases) page.
 
 ### Description
 
-A simple command line tool to convert hexadecimal values of any format (e.g: ff, #ff, or 0xff) into decimal format with the option of padding with prepended zeros (e.g: ff == 15).
+A simple command line tool to convert hexadecimal values of any format (e.g: ff, #ff, or 0xff) into decimal format with the option of padding with prepended zeros (e.g: ff == 15). The padding option is a just a convenience for certain set-width displays so we don't have to do any post-formatting.  
 
 ### Motivation
 
@@ -30,13 +57,94 @@ This is a command line tool for both *Windows* and *Linux*.
 
 ### How To Use
 
+Both the *Windows* and *Linux* version's have portable executables, but the *Linux* version also provides and *Debian* (.deb) package for installation on *Debian* based *Linux* systems. I have no experience building packages for other types or *Linux* package managers, but if you would like to fork, create, build, and release this project yourself then, please (as per the license), be my guest.
+
 #### Windows Use
+
+##### Windows Portable
 
 &#x41;&#x73;&#x20;&#x77;&#x69;&#x74;&#x68;&#x20;&#x61;&#x6e;&#x79;&#x20;&#x70;&#x6f;&#x72;&#x74;&#x61;&#x62;&#x6c;&#x65;&#x20;&#x70;&#x72;&#x6f;&#x67;&#x72;&#x61;&#x6d;&#x20;&#x74;&#x68;&#x69;&#x73;&#x20;&#x63;&#x61;&#x6e;&#x20;&#x62;&#x65;&#x20;&#x70;&#x6c;&#x61;&#x63;&#x65;&#x64;&#x20;&#x61;&#x6e;&#x79;&#x77;&#x68;&#x65;&#x72;&#x65;&#x20;&#x79;&#x6f;&#x75;&#x20;&#x6c;&#x69;&#x6b;&#x65;&#x20;&#x6f;&#x6e;&#x20;&#x79;&#x6f;&#x75;&#x72;&#x20;&#x6d;&#x61;&#x63;&#x68;&#x69;&#x6e;&#x65;&#x2c;&#x20;&#x62;&#x75;&#x74;&#x20;&#x6d;&#x6f;&#x72;&#x65;&#x20;&#x70;&#x72;&#x65;&#x66;&#x65;&#x72;&#x61;&#x62;&#x6c;&#x79;&#x20;&#x69;&#x6e;&#x20;&#x61;&#x20;&#x64;&#x69;&#x72;&#x65;&#x63;&#x74;&#x6f;&#x72;&#x79;&#x20;&#x74;&#x68;&#x61;&#x74;&#x20;&#x69;&#x73;&#x20;&#x69;&#x6e;&#x20;&#x79;&#x6f;&#x75;&#x72;&#x20;`%PATH%`&#x20;&#x65;&#x6e;&#x76;&#x69;&#x72;&#x6f;&#x6e;&#x6d;&#x65;&#x6e;&#x74;&#x20;&#x76;&#x61;&#x72;&#x69;&#x61;&#x62;&#x6c;&#x65;&#x20;&#x73;&#x6f;&#x20;&#x79;&#x6f;&#x75;&#x20;&#x63;&#x61;&#x6e;&#x20;&#x72;&#x75;&#x6e;&#x20;&#x69;&#x74;&#x20;&#x77;&#x69;&#x74;&#x68;&#x6f;&#x75;&#x74;&#x20;&#x61;&#x20;&#x66;&#x75;&#x6c;&#x6c;&#x20;&#x70;&#x61;&#x74;&#x68;&#x20;&#x28;`hextodec`&#x20;&#x66;&#x6f;&#x72;&#x20;&#x65;&#x78;&#x61;&#x6d;&#x70;&#x6c;&#x65;&#x29;&#x2e;&#x20;&#x49;&#x20;&#x72;&#x65;&#x63;&#x6f;&#x6d;&#x6d;&#x65;&#x6e;&#x64;&#x20;&#x75;&#x73;&#x69;&#x6e;&#x67;&#x20;&#x61;&#x20;&#x64;&#x65;&#x64;&#x69;&#x63;&#x61;&#x74;&#x65;&#x64;&#x20;*Bin*&#x20;&#x64;&#x69;&#x72;&#x65;&#x63;&#x74;&#x6f;&#x72;&#x79;&#x2c;&#x20;&#x62;&#x75;&#x74;&#x20;&#x6f;&#x66;&#x20;&#x63;&#x6f;&#x75;&#x72;&#x73;&#x65;&#x2c;&#x20;&#x69;&#x74;&#x27;&#x73;&#x20;&#x79;&#x6f;&#x75;&#x72;&#x20;&#x63;&#x68;&#x6f;&#x69;&#x63;&#x65;&#x2e;&#x20;&#x49;&#x66;&#x20;&#x79;&#x6f;&#x75;&#x72;&#x20;&#x70;&#x61;&#x74;&#x68;&#x20;&#x69;&#x73;&#x6e;&#x27;&#x74;&#x20;&#x61;&#x6c;&#x72;&#x65;&#x61;&#x64;&#x79;&#x20;&#x69;&#x6e;&#x20;&#x79;&#x6f;&#x75;&#x72;&#x20;`%PATH%`&#x20;&#x65;&#x6e;&#x76;&#x69;&#x72;&#x6f;&#x6e;&#x6d;&#x65;&#x6e;&#x74;&#x20;&#x74;&#x68;&#x65;&#x6e;&#x20;&#x49;&#x20;&#x73;&#x75;&#x67;&#x67;&#x65;&#x73;&#x74;&#x20;&#x61;&#x64;&#x64;&#x69;&#x6e;&#x67;&#x20;&#x69;&#x74;<sup>[[1](#note-1)]</sup>&#x2c;&#x20;&#x62;&#x75;&#x74;&#x20;&#x69;&#x66;&#x20;&#x6e;&#x6f;&#x74;&#x20;&#x74;&#x68;&#x65;&#x6e;&#x20;&#x79;&#x6f;&#x75;&#x20;&#x68;&#x61;&#x76;&#x65;&#x20;&#x70;&#x72;&#x6f;&#x76;&#x69;&#x64;&#x65;&#x20;&#x74;&#x68;&#x65;&#x20;&#x66;&#x75;&#x6c;&#x6c;&#x20;&#x70;&#x61;&#x74;&#x68;&#x20;&#x28;`C:\Path\To\hextodec.exe`&#x20;&#x66;&#x6f;&#x72;&#x20;&#x65;&#x78;&#x61;&#x6d;&#x70;&#x6c;&#x65;&#x29;&#x20;&#x77;&#x68;&#x65;&#x6e;&#x20;&#x65;&#x78;&#x65;&#x63;&#x75;&#x74;&#x69;&#x6e;&#x67;&#x20;&#x74;&#x68;&#x65;&#x20;&#x70;&#x72;&#x6f;&#x67;&#x72;&#x61;&#x6d;&#x2e;
 
+##### Windows Installation
+
+There's really no need for installation in *Windows* and it is more hassle than necessary to do so. Of course, it can be done with whatever installation software (MSI, Inno, or similar) and adding the programs path to `%PATH%`, but there's no point that can I can see. If enough people ask for it I may do so in the future.
+
 #### Linux Use
 
+##### Linux Portable
+
+Nearly the same concept as with *Windows* (path is `$PATH`, of course) and you can use your own *bin* directory (*~/bin* for example), but there is usually a dedicated bin directory at `~/.local/bin` where I recommend placing the executable if you don't install it using the *Debian* package.
+
+##### Debian Installation
+
+The provided *.deb* (*Debian* package) installer provides a *man page* and a very basic *Bash Completion* file.
+
+To install with the *.deb* package you can either use *dpkg* or *gdebi[-gtk]*:
+
+With *dpkg*:
+
+```Bash
+ $ sudo dpkg -i /path/to/deb/installer/hextodex.deb
+```
+
+With *gdebi[-gtk]*:
+
+```Bash
+ $ sudo gdebi /path/to/deb/installer/hextodex.deb
+ # or; don't use sudo with the GTK version
+ $ gdebi-gtk /path/to/deb/installer/hextodex.deb
+```
+
+View *Man Page*:
+
+```Bash
+ $ man hextodec
+```
+
 ### Examples
+
+These examples are essentially the same in both *Windows* and *Linux* with the exception of the switch formats. *Windows* follows the *Windows* style (`/help` for example) and *Linux* follows the *Linux* style (`--help` for example). If the executable is not in the *Windows %PATH%* then you must provide the full path plus the .exe extension. If the executable is not in the *Linux $PATH* then you must provide the full path.
+
+Help message:
+
+```
+ > hextodec /h
+
+  Hexadecimal To Decimal - Convert hexadecimal values to decimal format.
+  hextodec [OPTIONS [VALUES]]
+
+  @OPTIONS
+    /h, /help         This help message.
+    /x, /hexadecimal  The HEXADECIMAL number to convert.
+    /p, /padding      DECIMAL number of 0's to prepend to the result.
+
+  @VALUES
+    HEXADECIMAL       Base 16 value; [0-9a-f]
+    DECIMAL           Base 10 value; [0-9]
+
+```
+
+Convert 0xFF (or FF or #FF) to it's corresponding decimal value in *Windows* (works the same in *PowerShell* and *CMD*, of course):
+
+```PowerShell
+ > hextodec /x 0xff
+255
+```
+
+Convert 0xF (or F or #F) to it's corresponding decimal value and ensure a 3 width in *Windows*:
+
+```PowerShell
+ # ` to escape # in PowerShell (or quote: '#f'), not necessary in CMD 
+ > hextodec /x `#f /p 3
+015
+```
+
+The same in *Linux*
+
+```Bash
+ $ hextodec -x ff
+255
+```
 
 ---
 
@@ -86,15 +194,19 @@ This is a command line tool for both *Windows* and *Linux*.
 
 ---
 
-## Notes
-
----
-
 ## Media
 
 Logo
 
 ![LOGO](docs/media/logo/hextodec.png)
+
+Help
+
+![HELP](docs/media/screenshots/help.png)
+
+Linux Man Page
+
+![LINUX MAN PAGE](docs/media/screenshots/manpage.png)
 
 ---
 
